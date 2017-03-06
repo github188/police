@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>运维总览</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/public.css">
+    <link rel="stylesheet" href="../../css/public-nav.css">
+    <link rel="stylesheet" href="../../css/运维管理/main.css">
+    <style>
+        .iconfont {
+            font-family:'iconfont';
+            font-style:normal;
+            color: #ffffff;
+            font-size: 20px;
+        }
+        .main .sub-nav{
+            margin-top:20px;
+            margin-bottom:20px;
+            margin-left: 20px;
+        }
+        .main .public-title-pic{
+            box-sizing: border-box;
+            float: right;
+            width: 34px;
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+            border: 1px solid #35485d;
+            border-radius: 4px;
+            margin-top: 5px;
+            margin-right: 20px;
+        }
+        /*top*/
+        .main .top{
+            margin-bottom: 10px;
+        }
+        .main .top-toggle .sub-nav{
+            float: right;
+            margin-right: 24%;
+        }
+        #failureTrend-chart{
+            height: 330px;
+            width: 100%;
+        }
+        /*bottom*/
+        .main .bottom-left,.main .bottom-right{
+            float: left;
+            box-sizing: border-box;
+        }
+        .main .bottom-left-chart,.main .bottom-right-chart{
+            height: 320px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="content clearfix">
+    <div class="main">
+        <!--右边内容区域是wrap-->
+        <div class="wrap">
+            <div class="wrap-header clearfix">
+                <div class="w-title">温岭市公安局天网工程运维平台</div>
+                <div class="w-ui">欢迎您，<span style="color:#265f89">张三</span>  丨  <span>退出</span></div>
+            </div>
+            <!--一级导航-->
+            <ul class="wrap-nav clearfix">
+                <li><a href="#" class="active">运维总览</a></li>
+                <li><a href="故障报修.html">故障报修</a></li>
+                <li><a href="故障接收.html">故障接收</a></li>
+                <li><a href="计费统计.html">计费统计</a></li>
+                <li><a href="运维设置.html">运维设置</a></li>
+            </ul>
+            <!--二级导航-->
+            <ul class="sub-nav clearfix">
+                <li><a>全部</a></li>
+                <li class="active"><a>2014期</a></li>
+                <li><a>2015期</a></li>
+                <li><a>2016期</a></li>
+            </ul>
+            <div class="ct-wrap">
+                <div class="ct clearfix">
+                    <div class="Modular top container">
+                        <div class="public-title top-title">
+                            故障走势图
+                            <div class="public-title-pic iconfont">&#xe600</div>
+                        </div>
+                        <div class="top-toggle clearfix">
+                            <ul class="sub-nav sub-nav-for-threeChart clearfix">
+                                <li class="active"><a>周</a></li>
+                                <li><a>15日</a></li>
+                                <li><a>月</a></li>
+                                <li><a>自定义</a></li>
+                            </ul>
+                        </div>
+                        <div class="chart container" id="failureTrend-chart"></div>
+                    </div>
+                    <div class="Modular bottom clearfix container">
+                        <div class="public-title top-title">
+                            设备修复概况
+                            <div class="public-title-pic iconfont">&#xe600</div>
+                        </div>
+                        <div class="bottom-left col-lg-6 col-sm-12">
+                            <div class="bottom-left-chart" id="bottom-left-chart"></div>
+                        </div>
+                        <div class="bottom-right col-lg-6 col-sm-12">
+                            <div class="bottom-right-chart" id="bottom-right-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左边栏  左边栏必须要放在main的下面-->
+    <div class="aside">
+        <!--用户信息-->
+        <div class="u-i-f clearfix">
+            <div class="ui-l">
+                <!--头像-->
+                <div class="head-portrait"></div>
+            </div>
+            <div class="ui-r">
+                <ul class="introduce">
+                    <li>姓名 ： <span>张三</span></li>
+                    <li>职务 ： <span>设备运维</span></li>
+                    <li>温岭市公安局</li>
+                </ul>
+            </div>
+        </div>
+        <!--导航-->
+        <ul class="navigation">
+          <li><a href="../cockpit.html">驾驶舱管理</a></li>
+          <li><a href="../network.html">网络拓扑</a></li>
+          <li><a href="../系统状态/监控/实时状态.html">系统状态</a></li>
+          <li><a href="../retrieval_analysis.html">检索分析</a></li>
+            <li><a href="#"  class="active">运维管理</a></li>
+            <li><a href="../系统管理/设备管理.html">系统管理</a></li>
+        </ul>
+    </div>
+</div>
+<div id="footer">Copyright © 2016 杭州以数科技有限公司</div>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script src="../../js/echarts.js"></script>
+<script src="../../js/public.js"></script>
+<script src="../../js/运维管理/运维总览chart.js"></script>
+<script src="../../js/nav-toggle.js"></script>
+</body>
+</html>

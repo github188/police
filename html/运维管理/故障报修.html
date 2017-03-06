@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>故障报修</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/public.css">
+    <link rel="stylesheet" href="../../css/public-nav.css">
+    <link rel="stylesheet" href="../../css/运维管理/main.css">
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('http://at.alicdn.com/t/font_1474859667_1808112.eot'); /* IE9*/
+            src: url('http://at.alicdn.com/t/font_1474859667_1808112.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('http://at.alicdn.com/t/font_1474859667_1808112.woff') format('woff'), /* chrome、firefox */
+            url('http://at.alicdn.com/t/font_1474859667_1808112.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('http://at.alicdn.com/t/font_1474859667_1808112.svg#iconfont') format('svg'); /* iOS 4.1- */
+        }
+        .iconfont {
+            font-family:'iconfont';
+            font-style:normal;
+        }
+        .main .subject{
+            background: #18293c;
+            width: 99%;
+            margin: auto;
+            margin-top: 10px;
+            padding-left: 18%;
+            padding-top: 20px;
+            padding-right: 18%;
+            padding-bottom: 30px;
+        }
+        /*小球*/
+        .main .balls{
+            box-sizing: border-box;
+            width: 100%;
+            margin: auto;
+            font-size: 12px;
+        }
+        .main .allLine{
+            margin: auto;
+            width: 62%;
+            font-size: 12px;
+            text-align: left;
+        }
+        .main .allLine >div{
+            float: left;
+        }
+        .main .one-day{
+            width: 15%;
+        }
+        .main .one-day >div:not(:last-child){
+            margin-bottom: 10px;
+        }
+        .main .allLine .ball{
+            float: left;
+            width: 18%;
+            background: #fff;
+            border-radius: 50%;
+        }
+        .main .allLine .green-ball{
+            background: #80e661;
+        }
+        .main .allLine .green-ball.active{
+            box-shadow:0 0 20px #8ffe6e;
+        }
+        .main .allLine .red-ball{
+            background: #e66462;
+        }
+        .main .allLine .red-ball.active{
+            box-shadow:0 0 20px #fb6f6d;
+        }
+        .main .allLine .line{
+            float: left;
+            height: 1px;
+            width: 82%;
+            background: #42f9f7;
+        }
+        .main .one-day:first-child{
+            margin-left: 3%;
+        }
+        .main .one-day:last-child{
+            width:6%;
+        }
+        .main .one-day:last-child .ball{
+            width:48%;
+        }
+        /*choose*/
+        .main .choose{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .main .choose .sub-nav{
+            float: left;
+        }
+        .main .choose .given{
+            float: right;
+        }
+        .main .choose .given li{
+            float: right;
+            height: 28px;
+            line-height: 28px;
+        }
+        .main .choose .given li:not(:first-child) a{
+            display: block;
+            height: 14px;
+            line-height: 14px;
+            font-size: 14px;
+            margin-right: 20px;
+            border-right: 1px solid #fff;
+            padding-right: 20px;
+            margin-top: 7px;
+        }
+        /*表格*/
+        .ga-table{
+            margin-bottom: 20px;
+        }
+        .ga-table table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .ga-table thead{
+            font-size: 18px;
+            color: #fff;
+            background: #152537;
+        }
+        .ga-table tbody{
+            font-size: 14px;
+            color: #fff;
+        }
+        .ga-table tbody tr:nth-child(n){
+            background: #18293c;
+        }
+        .ga-table tbody tr:nth-child(2n){
+            background: #152537;
+        }
+        .ga-table tr{
+            height: 40px;
+            text-align: center;
+        }
+        .ga-table td{
+            border: 1px solid #35485d;
+            text-align: center;
+            word-break:keep-all;
+            white-space:nowrap;
+        }
+        .ga-table thead td:nth-child(1){
+            border-right: none;
+            padding-left: 20%;
+        }
+        .ga-table thead td:nth-child(2){
+            border-left: none;
+            font-size: 14px;
+        }
+        .ga-table tbody tr:hover,.ga-table thead tr:hover{
+            background: #2c4059;
+        }
+        .ga-table .to-ball{
+            height: 90px;
+        }
+        .ga-table .allLine{
+            width: 80%;
+        }
+        .ga-table .one-day{
+            width: 24%;
+        }
+        .ga-table .one-day:first-child{
+            margin-left: 0;
+        }
+        .ga-table .one-day:last-child{
+            width:4%;
+        }
+        .ga-table .one-day:last-child .ball{
+            width:108%;
+        }
+        /*底部按钮*/
+        .main .handle{
+            width: 100%;
+            height: 45px;
+        }
+        .main .handle button{
+            background: #18293c;
+            border: 1px solid #35485d;
+            border-radius: 3px;
+        }
+        .main .handle .left-button{
+            width: 8%;
+            height: 24px;
+            margin-right: 20px;
+        }
+        .main .handle .right-button{
+            float: right;
+            margin-top: 12px;
+            width: 10%;
+            height: 30px;
+            box-shadow:inset 1px 1px 3px #a1a1a1;
+            border: none;
+        }
+        /*下拉*/
+        .main .con-row-down{
+            box-sizing: content-box;
+            width: 62%;
+            height: 100px;
+            border-radius: 2px;
+            position: relative;
+            cursor: pointer;
+        }
+        .main .con-row-down-word{
+            width: 100%;
+        }
+        .main .con-row-down-word > div{
+            float: left;
+        }
+        .main .con-dowm{
+            box-sizing: content-box;
+            position: absolute;
+            left:-1px;
+            top:100px;
+            width: 100%;
+            border: 1px solid #35485d;
+            border-radius: 2px;
+            z-index: 100;
+            cursor: pointer;
+            display: none;
+        }
+        .main .con-dowm-col{
+            background: #18293c;
+            cursor: pointer;
+        }
+        .main .con-dowm-col >div{
+            width: 100%;
+        }
+        .main .con-dowm-col .one-day:hover{
+            background: #2b4058;
+        }
+    </style>
+</head>
+<body>
+<div class="content clearfix">
+    <div class="main">
+        <!--右边内容区域是wrap-->
+        <div class="wrap">
+            <div class="wrap-header clearfix">
+                <div class="w-title">温岭市公安局天网工程运维平台</div>
+                <div class="w-ui">欢迎您，<span style="color:#265f89">张三</span>  丨  <span>退出</span></div>
+            </div>
+            <!--一级导航-->
+            <ul class="wrap-nav clearfix">
+                <li><a href="运维总览.html">运维总览</a></li>
+                <li><a href="#" class="active">故障报修</a></li>
+                <li><a href="故障接收.html">故障接收</a></li>
+                <li><a href="计费统计.html">计费统计</a></li>
+                <li><a href="运维设置.html">运维设置</a></li>
+            </ul>
+            <div class="ct-wrap">
+                <div class="ct clearfix">
+                    <div class="subject">
+                        <div class="balls">
+                            <div class="allLine con-row-down clearfix">
+                                <div class="con-row-down-word">
+                                    <div class="one-day to-change">
+                                        <div class="yearLine">&nbsp;</div>
+                                        <div class="monthLine">&nbsp;</div>
+                                        <div class="ballLine clearfix">
+                                            <div class="ball red-ball"></div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="dayLine">1日</div>
+                                    </div>
+                                    <div class="one-day to-change">
+                                        <div class="yearLine">&nbsp;</div>
+                                        <div class="monthLine">&nbsp;</div>
+                                        <div class="ballLine clearfix">
+                                            <div class="ball green-ball"></div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="dayLine">2日</div>
+                                    </div>
+                                    <div class="one-day to-change">
+                                        <div class="yearLine">&nbsp;</div>
+                                        <div class="monthLine">&nbsp;</div>
+                                        <div class="ballLine clearfix">
+                                            <div class="ball green-ball"></div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="dayLine">3日</div>
+                                    </div>
+                                    <div class="one-day to-change">
+                                        <div class="yearLine">&nbsp;</div>
+                                        <div class="monthLine">&nbsp;</div>
+                                        <div class="ballLine clearfix">
+                                            <div class="ball green-ball"></div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="dayLine">4日</div>
+                                    </div>
+                                    <div class="one-day to-change">
+                                        <div class="yearLine">&nbsp;</div>
+                                        <div class="monthLine">&nbsp;</div>
+                                        <div class="ballLine clearfix">
+                                            <div class="ball green-ball"></div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="dayLine">5日</div>
+                                    </div>
+                                    <div class="one-day to-change">
+                                        <div class="yearLine">&nbsp;</div>
+                                        <div class="monthLine">&nbsp;</div>
+                                        <div class="ballLine clearfix">
+                                            <div class="ball green-ball"></div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="dayLine">6日</div>
+                                    </div>
+                                    <div class="one-day to-change">
+                                        <div class="yearLine">&nbsp;</div>
+                                        <div class="monthLine">&nbsp;</div>
+                                        <div class="ballLine clearfix">
+                                            <div class="ball last-ball green-ball"></div>
+                                        </div>
+                                        <div class="dayLine">7日</div>
+                                    </div>
+                                </div>
+                                <div class="con-dowm">
+                                    <div class="con-dowm-col">
+                                        <div class="allLine clearfix">
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball red-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">1日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">2日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">3日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">4日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">5日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">6日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball last-ball green-ball"></div>
+                                                </div>
+                                                <div class="dayLine">7日</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="con-dowm-col">
+                                        <div class="allLine clearfix">
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball red-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">8日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">9日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">10日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">11日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">12日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">13日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball last-ball green-ball"></div>
+                                                </div>
+                                                <div class="dayLine">14日</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="con-dowm-col">
+                                        <div class="allLine clearfix">
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball red-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">15日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">16日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">17日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">18日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">19日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">20日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball last-ball green-ball"></div>
+                                                </div>
+                                                <div class="dayLine">21日</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="con-dowm-col">
+                                        <div class="allLine clearfix">
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball red-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">22日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">23日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">24日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">25日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">26日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">27日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball last-ball green-ball"></div>
+                                                </div>
+                                                <div class="dayLine">28日</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="con-dowm-col">
+                                        <div class="allLine clearfix">
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball red-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">29日</div>
+                                            </div>
+                                            <div class="one-day to-change">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">30日</div>
+                                            </div>
+                                            <div class="one-day to-change not-man">
+                                                <div class="yearLine">&nbsp;</div>
+                                                <div class="monthLine">&nbsp;</div>
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                </div>
+                                                <div class="dayLine">31日</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choose clearfix">
+                            <ul class="sub-nav clearfix">
+                                <li><a>全部</a></li>
+                                <li class="active"><a>2014期</a></li>
+                                <li><a>2015期</a></li>
+                                <li><a>2016期</a></li>
+                            </ul>
+                            <ul class="given clearfix">
+                                <li><a><i class="add-tr iconfont">&#xe602</i></a></li>
+                                <li><a>编号：002</a></li>
+                                <li><a>编号：001</a></li>
+                            </ul>
+                        </div>
+                        <div class="ga-table">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <td  colspan="3">温岭市公安局天网设备报修单</td>
+                                    <td>编号：001</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>报修时间</td>
+                                    <td>2016/9/2    8:30</td>
+                                    <td>项目</td>
+                                    <td>2014期</td>
+                                </tr>
+                                <tr>
+                                    <td>上报人</td>
+                                    <td>张三</td>
+                                    <td>接收人</td>
+                                    <td>李四</td>
+                                </tr>
+                                <tr class="to-ball">
+                                    <td>进程</td>
+                                    <td colspan="3">
+                                        <div class="allLine clearfix">
+                                            <div class="one-day">
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">上报</div>
+                                            </div>
+                                            <div class="one-day">
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">接收核实</div>
+                                            </div>
+                                            <div class="one-day">
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball green-ball  active"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">维护</div>
+                                            </div>
+                                            <div class="one-day">
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball"></div>
+                                                    <div class="line"></div>
+                                                </div>
+                                                <div class="dayLine">反馈核实</div>
+                                            </div>
+                                            <div class="one-day">
+                                                <div class="ballLine clearfix">
+                                                    <div class="ball"></div>
+                                                </div>
+                                                <div class="dayLine">完成</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>设备名称</td>
+                                    <td>故障描述</td>
+                                    <td>状态</td>
+                                    <td>操作</td>
+                                </tr>
+                                <tr>
+                                    <td>监控——横湖桥</td>
+                                    <td>无视频流</td>
+                                    <td class="notchange"><button>故障核实</button> <button>修复核实</button> <button>备注</button></td>
+                                    <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                </tr>
+                                <tr>
+                                    <td>监控——三星桥</td>
+                                    <td>无视频流</td>
+                                    <td class="notchange"><button>故障核实</button> <button>修复核实</button> <button>备注</button></td>
+                                    <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">添加报修监控设备<i class="add-tr iconfont">&#xe602</i></td>
+                                </tr>
+                                <tr>
+                                    <td>服务器——视频存储2</td>
+                                    <td>无法连接</td>
+                                    <td class="notchange"><button>故障核实</button> <button>修复核实</button> <button>备注</button></td>
+                                    <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">添加报修服务器设备<i class="add-tr iconfont">&#xe602</i></td>
+                                </tr>
+                                <tr>
+                                    <td>检测器——中华路1</td>
+                                    <td>视频丢失</td>
+                                    <td class="notchange"><button>故障核实</button> <button>修复核实</button> <button>备注</button></td>
+                                    <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">添加报修服务器设备<i class="add-tr iconfont">&#xe602</i></td>
+                                </tr>
+                                <tr>
+                                    <td>网络设备——汇聚交换机2</td>
+                                    <td>无法连接</td>
+                                    <td class="notchange"><button>故障核实</button> <button>修复核实</button> <button>备注</button></td>
+                                    <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">添加报修网络设备<i class="add-tr iconfont">&#xe602</i></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="handle clearfix">
+                            <button class="left-button export">导出数据</button>
+                            <button class="left-button print">打印数据</button>
+                            <button class="right-button presentation">故障报修</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    <!--左边栏  左边栏必须要放在main的下面-->
+    <div class="aside">
+        <!--用户信息-->
+        <div class="u-i-f clearfix">
+            <div class="ui-l">
+                <!--头像-->
+                <div class="head-portrait"></div>
+            </div>
+            <div class="ui-r">
+                <ul class="introduce">
+                    <li>姓名 ： <span>张三</span></li>
+                    <li>职务 ： <span>设备运维</span></li>
+                    <li>温岭市公安局</li>
+                </ul>
+            </div>
+        </div>
+        <!--导航-->
+        <ul class="navigation">
+            <li><a href="#">驾驶舱管理</a></li>
+            <li><a href="#">网络拓扑</a></li>
+            <li><a href="#">系统状态</a></li>
+            <li><a href="#">检索分析</a></li>
+            <li><a href="#"  class="active">运维管理</a></li>
+            <li><a href="../系统管理/设备管理.html">系统管理</a></li>
+        </ul>
+    </div>
+</div>
+<div id="footer">Copyright © 2016 杭州以数科技有限公司</div>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script src="../../js/echarts.js"></script>
+<script src="../../js/public.js"></script>
+<script src="../../js/运维管理/故障报修.js"></script>
+<script src="../../js/nav-toggle.js"></script>
+<script src="../../js/运维管理/小球切换.js"></script>
+</body>
+</html>

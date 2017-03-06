@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/public.css">
+    <link rel="stylesheet" href="../../css/public-nav.css">
+    <link rel="stylesheet" href="../../css/运维管理/main.css">
+    <style>
+        .ct-wrap{
+            min-height: 720px;
+        }
+        .ct-wrap .container{
+            padding: 0;
+        }
+        .main .Modular{
+            background: #132233;
+        }
+        .main .top-toggle .sub-nav{
+            float: right;
+            margin-right: 24%;
+        }
+        /*sec-nav*/
+        .main .sec-nav{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            margin-left: 0.5%;
+        }
+        .main .sec-nav li{
+            border: none;
+            border-right: 1px solid #fff;
+            height: 14px;
+            line-height: 14px;
+        }
+        .main .sec-nav li:last-child{
+            border-right: none;
+        }
+        /*two，three，four*/
+        .main .two{
+            margin-top: 16px;
+        }
+        .main .two-all,.main .three-all{
+            padding-bottom: 20px;
+            background: #18293c;
+            position: relative;
+            margin-bottom: 16px;
+            border-radius: 4px;
+        }
+        .main #loginRecord-chart{
+            height: 400px;
+            width: 100%;
+        }
+        /*表格*/
+        .ga-table{
+            margin-bottom: 100px;
+            margin-top: 25px;
+        }
+        .ga-table table{
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+        }
+        .ga-table thead{
+            font-size: 14px;
+            color: #fff;
+            background: #152537;
+        }
+        .ga-table tbody{
+            font-size: 14px;
+            color: #fff;
+        }
+        .ga-table tbody tr:nth-child(n){
+            background: #18293c;
+        }
+        .ga-table tbody tr:nth-child(2n){
+            background: #152537;
+        }
+        .ga-table tr{
+            height: 30px;
+            text-align: center;
+        }
+        .ga-table td{
+            border: 1px solid #35485d;
+            text-align: center;
+            word-break:keep-all;
+            white-space:nowrap;
+        }
+        .ga-table button{
+            margin-right: 15%;
+        }
+        .ga-table tbody tr:hover,.ga-table thead tr:hover{
+            background: #2c4059;
+        }
+        /*two*/
+        .main .two .ga-table tbody tr:not(:last-child){
+            height: 40px;
+        }
+        .main .ga-search{
+            margin-top: 20px;
+            margin-left: 75%;
+            width: 15%;
+            height: 24px;
+        }
+        .main .ga-search input{
+            width: 80%;
+            height: 100%;
+            line-height: 24px;
+            color:#fff;
+            background: #18293c;
+            border: 1px solid #35485d;
+            border-radius: 24px 0 0 24px;
+            padding-left: 10px;
+        }
+        .main .ga-search div{
+            float: right;
+            width:20%;
+            height: 100%;
+            line-height: 24px;
+            background: #35485d;
+            text-align: center;
+            border-radius:0 24px 24px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="content clearfix">
+    <div class="main">
+        <!--右边内容区域是wrap-->
+        <div class="wrap">
+            <div class="wrap-header clearfix">
+                <div class="w-title">温岭市公安局天网工程运维平台</div>
+                <div class="w-ui">欢迎您，<span style="color:#265f89">张三</span>  丨  <span>退出</span></div>
+            </div>
+            <!--一级导航-->
+            <ul class="wrap-nav clearfix">
+                <li><a href="设备管理.html">设备管理</a></li>
+                <li><a href="#" class="active">用户管理</a></li>
+                <li><a href="日报管理.html">日报管理</a></li>
+            </ul>
+            <!--二级导航-->
+            <ul class="sec-nav sub-nav clearfix">
+                <li><a href="#" class="active">用户管理</a></li>
+                <li><a href="权限管理.html">权限管理</a></li>
+            </ul>
+            <div class="ct-wrap">
+                <div class="ct clearfix container">
+                    <div class="Modular two clearfix container">
+                        <div class="two-all">
+                            <div class="public-title top-title">
+                                用户清单
+                            </div>
+                            <div class="ga-search">
+                                <input type="text" class="search-text" placeholder="请输入关键字" />
+                                <div class="for-search">搜索</div>
+                            </div>
+                            <div class="ga-table">
+                                <table  class="search-table">
+                                    <thead>
+                                    <tr>
+                                        <td>序号</td>
+                                        <td>使用人</td>
+                                        <td>单位</td>
+                                        <td>职位</td>
+                                        <td>项目</td>
+                                        <td>账号</td>
+                                        <td>权限选择</td>
+                                        <td>操作</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>系统账号</td>
+                                        <td>/</td>
+                                        <td>/</td>
+                                        <td>/</td>
+                                        <td>admin</td>
+                                        <td>管理员</td>
+                                        <td class="notchange">/</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>张大川</td>
+                                        <td>温岭公安局</td>
+                                        <td>科长</td>
+                                        <td>全部</td>
+                                        <td>zhangdachuan</td>
+                                        <td>管理员</td>
+                                        <td class="notchange"><button>更多</button><i class="remove-tr iconfont">&#xe603</i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>李小明</td>
+                                        <td>温岭公安局</td>
+                                        <td>科员</td>
+                                        <td>全部</td>
+                                        <td>lixiaoming</td>
+                                        <td>工作人员</td>
+                                        <td class="notchange"><button>更多</button><i class="remove-tr iconfont">&#xe603</i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>王中仁</td>
+                                        <td>温岭公安局</td>
+                                        <td>科员</td>
+                                        <td>2014期</td>
+                                        <td>lixiaoming</td>
+                                        <td>运维人员</td>
+                                        <td class="notchange"><button>更多</button><i class="remove-tr iconfont">&#xe603</i></td>
+                                    </tr>
+                                    <tr>
+                                        <td  colspan="8"><i class="add-tr iconfont">&#xe602</i></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Modular three clearfix container">
+                        <div class="three-all">
+                            <div class="public-title top-title">
+                                用户登录记录
+                            </div>
+                            <div class="top-toggle clearfix">
+                                <ul class="sub-nav sub-nav-for-login clearfix">
+                                    <li class="active"><a>周</a></li>
+                                    <li><a>15日</a></li>
+                                    <li><a>月</a></li>
+                                </ul>
+                            </div>
+                            <div class="chart container" id="loginRecord-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左边栏  左边栏必须要放在main的下面-->
+    <div class="aside">
+        <!--用户信息-->
+        <div class="u-i-f clearfix">
+            <div class="ui-l">
+                <!--头像-->
+                <div class="head-portrait"></div>
+            </div>
+            <div class="ui-r">
+                <ul class="introduce">
+                    <li>姓名 ： <sapn>张三</sapn></li>
+                    <li>职务 ： <sapn>设备运维</sapn></li>
+                    <li>温岭市公安局</li>
+                </ul>
+            </div>
+        </div>
+        <!--导航-->
+        <ul class="navigation">
+            <li><a href="#">驾驶舱管理</a></li>
+            <li><a href="#">网络拓扑</a></li>
+            <li><a href="#">系统状态</a></li>
+            <li><a href="#">检索分析</a></li>
+            <li><a href="../运维管理/运维总览.html">运维管理</a></li>
+            <li><a href="#" class="active">系统管理</a></li>
+        </ul>
+    </div>
+</div>
+<div id="footer">Copyright © 2016 杭州以数科技有限公司</div>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script src="../../js/echarts.js"></script>
+<script src="../../js/public.js"></script>
+<script src="../../js/系统管理/设备管理.js"></script>
+<script src="../../js/系统管理/loginRecordChart.js"></script>
+<script src="../../js/nav-toggle.js"></script>
+<script src="../../js/系统管理/用户管理搜索.js"></script>
+</body>
+</html>

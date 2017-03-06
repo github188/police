@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('http://at.alicdn.com/t/font_1474795053_1555738.eot'); /* IE9*/
+    src: url('http://at.alicdn.com/t/font_1474795053_1555738.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('http://at.alicdn.com/t/font_1474795053_1555738.woff') format('woff'), /* chrome、firefox */
+    url('http://at.alicdn.com/t/font_1474795053_1555738.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('http://at.alicdn.com/t/font_1474795053_1555738.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+    font-family:'iconfont';
+    font-style:normal;
+}
+body{
+    background: #0e1a28;
+}
+input,button { outline:none; }
+.ct{
+    background: #132233;
+}
+/*二级导航*/
+.main .sub-nav{
+    margin-top:0px;
+    margin-bottom:0px;
+}
+.main .sub-nav li{
+    box-sizing: content-box;
+    width: 80px;
+    height:26px;
+    line-height: 26px;
+    border: 1px solid #35485d;
+    cursor: pointer;
+}
+.main .sub-nav li.active{
+    background: #2b4058;
+}
+.main .sub-nav li:not(:first-child){
+    border-left: none;
+}
+/*模块公用样式*/
+.main .public-title{
+    box-sizing: border-box;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    padding-left: 20px;
+}
+.main .Modular{
+    width: 100%;
+    margin-bottom: 10px;
+    background: #18293c;
+    padding-bottom: 20px;
+}
+/*表格添加删除行*/
+.ga-table .remove-tr{
+    color: #35485d;
+    font-size: 14px;
+    cursor: pointer;
+}
+.ga-table .add-tr{
+    color: #35485d;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 3%;
+}
+.ga-table button{
+    box-shadow:inset 1px 1px 3px #a1a1a1;
+    background: #18293c;
+    border-radius: 3px;
+    border: none;
+    margin-right: 3%;
+}
+.ga-table .add-input{
+    width: 60%;
+    margin-right: 5%;
+    background: inherit;
+    border: 1px solid #35485d;
+}
+.ga-table .add-btn{
+    width: 20%;
+    background: inherit;
+    border: none;
+}

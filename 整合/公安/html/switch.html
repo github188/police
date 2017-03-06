@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>switch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/switch_css.css">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script type="text/javascript" src="../js/switch_js.js"></script>
+    <style>
+        .col-xs-1,
+        .col-sm-1,
+        .col-md-1,
+        .col-lg-1,
+        .col-xs-2,
+        .col-sm-2,
+        .col-md-2,
+        .col-lg-2,
+        .col-xs-3,
+        .col-sm-3,
+        .col-md-3,
+        .col-lg-3,
+        .col-xs-4,
+        .col-sm-4,
+        .col-md-4,
+        .col-lg-4,
+        .col-xs-5,
+        .col-sm-5,
+        .col-md-5,
+        .col-lg-5,
+        .col-xs-6,
+        .col-sm-6,
+        .col-md-6,
+        .col-lg-6,
+        .col-xs-7,
+        .col-sm-7,
+        .col-md-7,
+        .col-lg-7,
+        .col-xs-8,
+        .col-sm-8,
+        .col-md-8,
+        .col-lg-8,
+        .col-xs-9,
+        .col-sm-9,
+        .col-md-9,
+        .col-lg-9,
+        .col-xs-10,
+        .col-sm-10,
+        .col-md-10,
+        .col-lg-10,
+        .col-xs-11,
+        .col-sm-11,
+        .col-md-11,
+        .col-lg-11,
+        .col-xs-12,
+        .col-sm-12,
+        .col-md-12,
+        .col-lg-12 {
+            padding: 0;
+        }
+
+        .ct-l {
+            box-sizing: border-box;
+            padding-right: 10px;
+            /*background-color: red;*/
+        }
+
+        .ct-l-wrap {
+            /*background-color: pink;*/
+        }
+        /*左边*/
+
+        .switch-information {
+            height: 260px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .interface-information {
+            height: 290px;
+            border-radius: 5px;
+            background-color: rgb(19, 30, 45);
+            margin-bottom: 10px;
+        }
+
+        .alarm-information {
+            height: 210px;
+            border-radius: 5px;
+            background-color: rgb(19, 30, 45);
+        }
+        /*右边*/
+
+        .cpu {
+            height: 270px;
+            border-radius: 5px;
+            /*background-color: blue;*/
+            background-color: rgb(19, 30, 45);
+            margin-bottom: 10px;
+        }
+
+        .memory {
+            height: 250px;
+            border-radius: 5px;
+            /*background-color: skyblue;*/
+            background-color: rgb(19, 30, 45);
+            margin-bottom: 10px;
+        }
+
+        .net {
+            height: 250px;
+            border-radius: 5px;
+            /*background-color: green;*/
+            background-color: rgb(19, 30, 45);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content clearfix">
+        <div class="main">
+            <!--右边内容区域是wrap-->
+            <div class="wrap">
+                <div class="wrap-header clearfix">
+                    <div class="w-title">温岭市公安局天网工程运维平台</div>
+                    <div class="w-ui">欢迎您，<span style="color:#265f89">张三</span> 丨 <span>退出</span></div>
+                </div>
+                <div class="wrap-content">
+                    <div class="ct">
+                        <div class="container">
+                            <div class="ct-l col-lg-7">
+                                <div class="ct-l-wrap">
+                                    <!--交换机基本信息-->
+                                    <div class="switch-information">
+                                        <div id="infor_top" style="height:150px;">
+                                            <div id="pic1" style="">
+                                                <img src="/img/CISCO_logo.png" style="margin-top:50px;">
+                                            </div>
+                                            <div id="righttoptext">
+                                                <div class="righttext">设备名称：核心交换机1</div>
+                                                <div class="righttext">设备型号：WS-C2960-48TC-L</div>
+                                                <div class="righttext">设备IP：192.168.1.124</div>
+                                                <div class="righttext">所属项目：2014期</div>
+                                            </div>
+                                        </div>
+                                        <div id="infor_bottom" style="height:110px;">
+                                            <div id="leftbottomtext">
+                                                <div class="lefttext">处理器：RC32300</div>
+                                                <div class="lefttext">内存：64M</div>
+                                                <div class="lefttext">开机时间：1024h</div>
+                                            </div>
+
+                                            <div id="rightbottomtext">
+                                                <div class="righttext">温度：26℃</div>
+                                                <div class="righttext">电压：12V</div>
+                                                <div class="righttext">应用层次：二层</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <!--接口信息-->
+                                    <div class="interface-information">
+                                        <div class="smalltitle" style="width:100%;">接口信息</div>
+
+                                        <div class="interface_oneline" style="width:100%;height:62px;margin-top:30px;">
+                                            <div class="left_interface_oneline" style="float:left;margin-left:30px;">
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_white.png" style="">
+                                                    <p>1</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>3</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_white.png" style="">
+                                                    <p>5</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>7</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_white.png" style="">
+                                                    <p>9</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_white.png" style="">
+                                                    <p>11</p>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="right_interface_oneline" style="float:right;margin-right:30px;">
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_white.png" style="">
+                                                    <p>13</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>15</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_white.png" style="">
+                                                    <p>17</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_white.png" style="">
+                                                    <p>19</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_white.png" style="">
+                                                    <p>21</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>23</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="interface_oneline" style="width:100%;height:62px;margin-top:30px;">
+                                            <div class="left_interface_oneline" style="float:left;margin-left:30px;">
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>2</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>4</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>6</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>8</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>10</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>12</p>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="right_interface_oneline" style="float:right;margin-right:30px;">
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>14</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>16</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>18</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>20</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>22</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>24</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="interface_oneline" style="width:100%;height:62px;margin-top:30px;">
+                                            <div class="left_interface_oneline" style="float:left;margin-left:30px;">
+                                                <div class="oneinterface" style="text-align:center;float:left;">
+                                                    <img src="/img/interface_green.png" style="">
+                                                    <p>CONSOLE</p>
+                                                </div>
+                                                <div class="oneinterface" style="text-align:center;float:left;margin-left:20px;">
+                                                    <img src="/img/interface_white.png" style="">
+                                                    <p>WLAN</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--告警信息-->
+                                    <div class="alarm-information">
+                                        <div id="oneline" style="width:100%;height:20px;">
+                                            <div class="smalltitle" style="float:left;">告警信息</div>
+                                            <div id="more" style="float:right;margin-right:10px">更多</div>
+                                        </div>
+                                        <div class="keywordtag">
+                                            <p id="keyword">关键字段：</p>
+                                            <div class="keywordtags">CPU</div>
+                                            <div class="keywordtags">内存</div>
+                                            <div class="keywordtags">温度</div>
+                                            <div class="keywordtags">网络</div>
+                                        </div>
+                                        <div class="warning-table" style="overflow:scroll;height:150px;overflow-x:hidden">
+                                            <table id="warning-table" style="height:200px;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="firsttd">2016/9/10</td>
+                                                        <td class="secondtd">18:00</td>
+                                                        <td class="thirdtd">CPU使用率85%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="firsttd">2016/9/10</td>
+                                                        <td class="secondtd">18:01</td>
+                                                        <td class="thirdtd">CPU使用率95%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="firsttd">2016/9/10</td>
+                                                        <td class="secondtd">18:02</td>
+                                                        <td class="thirdtd">CPU使用率94%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="firsttd">2016/9/10</td>
+                                                        <td class="secondtd">18:03</td>
+                                                        <td class="thirdtd">CPU使用率90%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="firsttd">2016/9/10</td>
+                                                        <td class="secondtd">18:04</td>
+                                                        <td class="thirdtd">CPU使用率86%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="firsttd">2016/9/10</td>
+                                                        <td class="secondtd">18:05</td>
+                                                        <td class="thirdtd">CPU使用率86%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="firsttd">2016/9/10</td>
+                                                        <td class="secondtd">18:06</td>
+                                                        <td class="thirdtd">CPU使用率86%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="firsttd">2016/9/10</td>
+                                                        <td class="secondtd">18:07</td>
+                                                        <td class="thirdtd">CPU使用率86%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="ct-r col-lg-5">
+                                <!--cpu-->
+                                <div class="cpu">
+                                    <div class="smalltitle" style="float:left;width:100%;"> CPU</div>
+                                    <div class="rightbtns clearfix" style="float:left;width:100%;">
+                                        <div class="diagram_title">CPU使用率7%</div>
+                                        <!--三个分离按钮-->
+                                        <div class="segmentedbuttons clearfix" style="float:left;">
+                                            <div class="segbtn">1h</div>
+                                            <div class="segbtn">6h</div>
+                                            <div class="segbtn">24h</div>
+                                        </div>
+                                    </div>
+                                    <div id="cpuchart" style="float:left;height:220px;width:100%;"></div>
+                                </div>
+                                <!--内存-->
+                                <div class="memory">
+                                    <div class="smalltitle" style="float:left; width:100%;">内存</div>
+                                    <div class="title" style="float:left;height:30px;width:100%;margin:0 auto;text-align:center">物理内存使用率17%</div>
+
+                                    <div class="rightbtns clearfix" style="float:left;width:100%;">
+                                        <div class="diagram_title">虚拟内存使用率7%</div>
+                                        <!--三个分离按钮-->
+                                        <div class="segmentedbuttons clearfix" style="float:left;margin-left:-20px;">
+                                            <div class="segbtn">1h</div>
+                                            <div class="segbtn">6h</div>
+                                            <div class="segbtn">24h</div>
+                                        </div>
+                                    </div>
+                                    <div id="memorychart" style="float:left;height:210px;width:100%;"></div>
+                                </div>
+                                <!--网络-->
+                                <div class="net">
+                                    <div class="smalltitle" style="float:left;">网络</div>
+                                    <div class="title" style="margin:0 auto;text-align:center;width:200px">延迟3ms</div>
+                                    <div class="title" style="margin:0 auto;text-align:center;width:300px">发送：120,431,534字节 丢包率1%</div>
+                                    <div class="rightbtns clearfix" style="float:left;width:100%;">
+                                        <div class="diagram_title">接受：119，131，453字节</div>
+                                        <!--三个分离按钮-->
+                                        <div class="segmentedbuttons clearfix" style="float:left;margin-left:-65px;">
+                                            <div class="segbtn">1h</div>
+                                            <div class="segbtn">6h</div>
+                                            <div class="segbtn">24h</div>
+                                        </div>
+                                    </div>
+                                    <div id="netchart" style="float:left;height:200px;width:100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--左边栏  左边栏必须要放在main的下面-->
+        <div class="aside">
+            <!--用户信息-->
+            <div class="u-i-f clearfix">
+                <div class="ui-l">
+                    <!--头像-->
+                    <div class="head-portrait"></div>
+                </div>
+                <div class="ui-r">
+                    <ul class="introduce">
+                        <li>姓名 ：
+                            <sapn>张三</sapn>
+                        </li>
+                        <li>职务 ：
+                            <sapn>设备运维</sapn>
+                        </li>
+                        <li>温岭市公安局</li>
+                    </ul>
+                </div>
+            </div>
+            <!--导航-->
+            <ul class="navigation">
+              <li><a href="cockpit.html">驾驶舱管理</a></li>
+              <li><a href="network.html" class="active">网络拓扑</a></li>
+              <li><a href="系统状态/监控/实时状态.html">系统状态</a></li>
+              <li><a href="retrieval_analysis.html">检索分析</a></li>
+              <li><a href="运维管理/运维总览.html">运维管理</a></li>
+              <li><a href="系统管理/设备管理.html">系统管理</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="footer">Copyright © 2016 杭州以数科技有限公司</div>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/public.js"></script>
+    <!-- ECharts单文件引入 -->
+    <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+</body>
+
+</html>

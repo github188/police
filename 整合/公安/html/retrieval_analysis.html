@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>检索分析</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/retrieval_analysis_css.css">
+</head>
+
+<body>
+    <div class="content clearfix">
+        <div class="main">
+            <!--右边内容区域是wrap-->
+            <div class="wrap" style="height:100%;">
+                <div class="wrap-header clearfix">
+                    <div class="w-title">温岭市公安局天网工程运维平台</div>
+                    <div class="w-ui">欢迎您，<span style="color:#265f89">张三</span> 丨 <span>退出</span></div>
+                </div>
+                <div class="wrap-content">
+                    <div class="ct">
+                        <div class="ct-firstbox">
+                            <!--上中下分层的上层-->
+                            <div class="smalltitle" style="width:100%">日志查询</div>
+                            <!--占了两行的下拉框选择区域-->
+                            <!--第一行-->
+
+                            <div class="region-combobox" style="width:800px;text-align:center;margin:0 auto;">
+                                <!--可重复利用的复合下拉框-->
+                                <div class="combobox">
+                                    <!--左边文字-->
+                                    <div class="combox-left">所属项目：</div>
+                                    <!--右边下拉框-->
+                                    <div class="combox-right">
+                                        <div class="combox-down">
+                                            <!--当前选项-->
+                                            <div class="combox-down-word">2016期</div>
+                                            <!--右下角的三角标志-->
+                                            <div class="conbox-down-sling"></div>
+
+                                            <!--下拉显示的剩余选项-->
+                                            <div class="conbox-down-remaining">
+                                                <div class="combox-down-col">2014期</div>
+                                                <div class="combox-down-col">2015期</div>
+                                                <div class="combox-down-col">2016期</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!--第二个下拉框加文字-->
+                                <div class="combobox" id="combobox2">
+                                    <!--左边文字-->
+                                    <div class="combox-left">设备类型：</div>
+                                    <!--右边下拉框-->
+                                    <div class="combox-right">
+                                        <div class="combox-down">
+                                            <!--当前选项-->
+                                            <div class="combox-down-word">监控</div>
+                                            <!--右下角的三角标志-->
+                                            <div class="conbox-down-sling"></div>
+
+                                            <!--下拉显示的剩余选项-->
+                                            <div class="conbox-down-remaining">
+                                                <div class="combox-down-col">监控</div>
+                                                <div class="combox-down-col">服务器</div>
+                                                <div class="combox-down-col">摄像头</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+
+                                <!--第三个下拉框加文字-->
+                                <div class="combobox" id="combobox3">
+                                    <!--左边文字-->
+                                    <div class="combox-left">品牌型号：</div>
+                                    <!--右边下拉框-->
+                                    <div class="combox-right">
+                                        <div class="combox-down">
+                                            <!--当前选项-->
+                                            <div class="combox-down-word">不限</div>
+                                            <!--右下角的三角标志-->
+                                            <div class="conbox-down-sling"></div>
+
+                                            <!--下拉显示的剩余选项-->
+                                            <div class="conbox-down-remaining">
+                                                <div class="combox-down-col">不限</div>
+                                                <div class="combox-down-col">TS</div>
+                                                <div class="combox-down-col">TG</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+
+                                <!--第四个下拉框加文字-->
+                                <div class="combobox" id="combobox4">
+                                    <!--左边文字-->
+                                    <div class="combox-left">区域：</div>
+                                    <!--右边下拉框-->
+                                    <div class="combox-right">
+                                        <div class="combox-down">
+                                            <!--当前选项-->
+                                            <div class="combox-down-word">城南</div>
+                                            <!--右下角的三角标志-->
+                                            <div class="conbox-down-sling"></div>
+
+                                            <!--下拉显示的剩余选项-->
+                                            <div class="conbox-down-remaining">
+                                                <div class="combox-down-col">城南</div>
+                                                <div class="combox-down-col">城北</div>
+                                                <div class="combox-down-col">城西</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+
+                            </div>
+                            <div class="region-combobox" style="width:800px;text-align:center;margin:0 auto;">
+                                <!--（在第二行了）第五个下拉框加文字-->
+                                <div class="combobox" id="combobox5">
+                                    <!--左边文字-->
+                                    <div class="combox-left">设备状态：</div>
+                                    <!--右边下拉框-->
+                                    <div class="combox-right">
+                                        <div class="combox-down">
+                                            <!--当前选项-->
+                                            <div class="combox-down-word">不限</div>
+                                            <!--右下角的三角标志-->
+                                            <div class="conbox-down-sling"></div>
+
+                                            <!--下拉显示的剩余选项-->
+                                            <div class="conbox-down-remaining">
+                                                <div class="combox-down-col">不限</div>
+                                                <div class="combox-down-col">正常</div>
+                                                <div class="combox-down-col">故障</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+
+                                <!--（在第二行了）第六个下拉框加文字-->
+                                <div class="combobox" id="combobox6">
+                                    <!--左边文字-->
+                                    <div class="combox-left">故障类型：</div>
+                                    <!--右边下拉框-->
+                                    <div class="combox-right">
+                                        <div class="combox-down">
+                                            <!--当前选项-->
+                                            <div class="combox-down-word">CPU</div>
+                                            <!--右下角的三角标志-->
+                                            <div class="conbox-down-sling"></div>
+
+                                            <!--下拉显示的剩余选项-->
+                                            <div class="conbox-down-remaining">
+                                                <div class="combox-down-col">CPU</div>
+                                                <div class="combox-down-col">内存</div>
+                                                <div class="combox-down-col">温度</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+
+                                <!--（在第二行了）第七个下拉框加文字-->
+                                <div class="combobox" id="combobox7">
+                                    <!--左边文字-->
+                                    <div class="combox-left">起始时间：</div>
+                                    <!--右边下拉框-->
+                                    <div class="combox-right">
+                                        <div class="combox-down">
+                                            <!--当前选项-->
+                                            <div class="combox-down-word">2016-8-20</div>
+                                            <!--右下角的三角标志-->
+                                            <div class="conbox-down-sling"></div>
+
+                                            <!--下拉显示的剩余选项-->
+                                            <div class="conbox-down-remaining">
+                                                <div class="combox-down-col">2016-8-20</div>
+                                                <div class="combox-down-col">2016-8-21</div>
+                                                <div class="combox-down-col">2016-8-22</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+
+                                <!--（在第二行了）第八个下拉框加文字-->
+                                <div class="combobox" id="combobox8">
+                                    <!--左边文字-->
+                                    <div class="combox-left">结束时间：</div>
+                                    <!--右边下拉框-->
+                                    <div class="combox-right">
+                                        <div class="combox-down">
+                                            <!--当前选项-->
+                                            <div class="combox-down-word">2016-8-30</div>
+                                            <!--右下角的三角标志-->
+                                            <div class="conbox-down-sling"></div>
+
+                                            <!--下拉显示的剩余选项-->
+                                            <div class="conbox-down-remaining">
+                                                <div class="combox-down-col">2016-8-30</div>
+                                                <div class="combox-down-col">2016-8-31</div>
+                                                <div class="combox-down-col">2016-9-1</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+                            </div>
+
+                            <!--自定义复用搜索框-->
+                            <div class="searchbox">
+                                <input id="serachinput" type="text" name="searchkeyword" value="" placeholder="   请输入关键词...">
+                                <div id="searchright">搜索</div>
+                            </div>
+                        </div>
+                        <div class="ct-secondbox">
+                            <!--中层-->
+                            <div class="smalltitle" style="width: 100%;">搜索结果</div>
+                            <br>
+                            <!--表格-->
+
+                            <div class="result-table" style="margin:0 auto;overflow:scroll;overflow-x:hidden;height:180px; width:100%;">
+                                <table border="1px" cellpadding="0px" id="result-table" style="width:90%;margin:0 auto;overflow:scroll;height:220px;">
+                                    <thead style="background-color:rgb(17,26,40)">
+                                        <tr>
+                                            <td class="result-table-td" style="width:5%;text-align:center">序号</td>
+                                            <td class="result-table-td" style="width:14%;text-align:center">设备名称</td>
+                                            <td class="result-table-td" style="width:14%;text-align:center">设备类型</td>
+                                            <td class="result-table-td" style="width:25%;text-align:center">品牌型号</td>
+                                            <td class="result-table-td" style="width:14%;text-align:center">所属项目</td>
+                                            <td class="result-table-td" style="width:14%;text-align:center">设备状态</td>
+                                            <td class="result-table-td" style="width:14%;text-align:center">日志</td>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td class="result-table-td" style="width:45px;text-align:center;height:25px;">001</td>
+                                            <td class="result-table-td" style="width:130px;text-align:center">横湖路1</td>
+                                            <td class=" result-table-td " style="width:130px;text-align:center">监控</td>
+                                            <td class="result-table-td " style="width:210px;text-align:center">海康威视DS-2CD6233F-SDI</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">2016期</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">故障！</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">加入对比</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="result-table-td" style="width:45px;text-align:center;height:25px;">002</td>
+                                            <td class="result-table-td" style="width:130px;text-align:center">三星桥1</td>
+                                            <td class=" result-table-td " style="width:130px;text-align:center">监控</td>
+                                            <td class="result-table-td " style="width:210px;text-align:center">海康威视DS-2CD6233F-SDI</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">2016期</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">故障！</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">加入对比</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="result-table-td" style="width:45px;text-align:center;height:25px;">003</td>
+                                            <td class="result-table-td" style="width:130px;text-align:center">横湖路2</td>
+                                            <td class=" result-table-td " style="width:130px;text-align:center">监控</td>
+                                            <td class="result-table-td " style="width:210px;text-align:center">海康威视DS-2CD876MF-FCB</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">2016期</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">故障！</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">加入对比</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="result-table-td" style="width:45px;text-align:center;height:25px;">004</td>
+                                            <td class="result-table-td" style="width:130px;text-align:center">横湖路3</td>
+                                            <td class=" result-table-td " style="width:130px;text-align:center">监控</td>
+                                            <td class="result-table-td " style="width:210px;text-align:center">海康威视DS-2CD876MF-FCB</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">2016期</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">故障！</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">加入对比</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="result-table-td" style="width:45px;text-align:center;height:25px;">005</td>
+                                            <td class="result-table-td" style="width:130px;text-align:center">三星桥2</td>
+                                            <td class=" result-table-td " style="width:130px;text-align:center">监控</td>
+                                            <td class="result-table-td " style="width:210px;text-align:center">海康威视DS-2CD855F-FCB</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">2016期</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">故障！</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">加入对比</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="result-table-td" style="width:45px;text-align:center;height:25px;">006</td>
+                                            <td class="result-table-td" style="width:130px;text-align:center">三星桥3</td>
+                                            <td class=" result-table-td " style="width:130px;text-align:center">监控</td>
+                                            <td class="result-table-td " style="width:210px;text-align:center">海康威视DS-2CD855F-FCB</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">2016期</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">正常</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">加入对比</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="result-table-td" style="width:45px;text-align:center;height:25px;">001</td>
+                                            <td class="result-table-td" style="width:130px;text-align:center">横湖路1</td>
+                                            <td class=" result-table-td " style="width:130px;text-align:center">监控</td>
+                                            <td class="result-table-td " style="width:210px;text-align:center">海康威视DS-2CD6233F-SDI</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">2016期</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">正常！</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">加入对比</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="result-table-td" style="width:45px;text-align:center;">001</td>
+                                            <td class="result-table-td" style="width:130px;text-align:center">横湖路1</td>
+                                            <td class=" result-table-td " style="width:130px;text-align:center">监控</td>
+                                            <td class="result-table-td " style="width:210px;text-align:center">海康威视DS-2CD6233F-SDI</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">2016期</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">故障！</td>
+                                            <td class="result-table-td " style="width:130px;text-align:center">加入对比</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="ct-thirdbox" style="margin-top:20px;">
+                            <!--下层-->
+                            <div class="smalltitle">相关日志</div>
+                            <div class="keywordtag" style="float:left; height:30px;">
+                                <p id="keyword">关键字段：</p>
+                                <div class="keywordtags">CPU</div>
+                                <div class="keywordtags">内存</div>
+                                <div class="keywordtags">温度</div>
+                                <div class="keywordtags">网络</div>
+                            </div>
+
+                            <div class="log-table" style="margin:0 auto;overflow:scroll;overflow-x:hidden;height:180px; width:95%;">
+                                <table border="0px" cellpadding="0px" id="log-table" style="overflow:scroll;height:220px;width:100%;">
+
+                                    <tbody style="margin:0 auto;width:100%;">
+                                        <tr>
+                                            <td class="log-table-td" style="text-align:center;height:25px;">2016年8月20日</td>
+                                            <td class="log-table-td" style="text-align:center">00：06</td>
+                                            <td class="log-table-td" style="text-align:center">CPU使用率66%</td>
+                                            <td class="log-table-td" style="text-align:center">温度56℃</td>
+                                            <td class="log-table-td" style="text-align:center">内存使用率60%</td>
+                                            <td class="log-table-td" style="text-align:center">设备正常</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="log-table-td" style="text-align:center;height:25px;">2016年8月20日</td>
+                                            <td class="log-table-td" style="text-align:center">01：08</td>
+                                            <td class="log-table-td" style="text-align:center">CPU使用率68%</td>
+                                            <td class="log-table-td" style="text-align:center">温度56℃</td>
+                                            <td class="log-table-td" style="text-align:center">内存使用率62%</td>
+                                            <td class="log-table-td" style="text-align:center">设备正常</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="log-table-td" style="text-align:center;height:25px;">2016年8月20日</td>
+                                            <td class="log-table-td" style="text-align:center">06：43</td>
+                                            <td class="log-table-td" style="text-align:center">CPU使用率63%</td>
+                                            <td class="log-table-td" style="text-align:center">温度55℃</td>
+                                            <td class="log-table-td" style="text-align:center">内存使用率60%</td>
+                                            <td class="log-table-td" style="text-align:center">设备正常</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="log-table-td" style="text-align:center;height:25px;">2016年8月20日</td>
+                                            <td class="log-table-td" style="text-align:center">08：21</td>
+                                            <td class="log-table-td" style="text-align:center">CPU使用率63%</td>
+                                            <td class="log-table-td" style="text-align:center">温度58℃</td>
+                                            <td class="log-table-td" style="text-align:center">内存使用率63%</td>
+                                            <td class="log-table-td" style="text-align:center">设备正常</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="log-table-td" style="text-align:center;height:25px;">2016年8月20日</td>
+                                            <td class="log-table-td" style="text-align:center">08：56</td>
+                                            <td class="log-table-td" style="text-align:center">CPU使用率86%</td>
+                                            <td class="log-table-td" style="text-align:center">温度60℃</td>
+                                            <td class="log-table-td" style="text-align:center">内存使用率80%</td>
+                                            <td class="log-table-td" style="text-align:center">设备正常</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="log-table-td" style="text-align:center;height:25px;">2016年8月20日</td>
+                                            <td class="log-table-td" style="text-align:center">13：01</td>
+                                            <td class="log-table-td" style="text-align:center">CPU使用率99%</td>
+                                            <td class="log-table-td" style="text-align:center">温度72℃</td>
+                                            <td class="log-table-td" style="text-align:center">内存使用率89%</td>
+                                            <td class="log-table-td" style="text-align:center">设备故障</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="log-table-td" style="text-align:center;height:25px;">2016年8月20日</td>
+                                            <td class="log-table-td" style="text-align:center">00：06</td>
+                                            <td class="log-table-td" style="text-align:center">CPU使用率66%</td>
+                                            <td class="log-table-td" style="text-align:center">温度56℃</td>
+                                            <td class="log-table-td" style="text-align:center">内存使用率60%</td>
+                                            <td class="log-table-td" style="text-align:center">设备正常</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="log-table-td" style="text-align:center;height:25px;">2016年8月20日</td>
+                                            <td class="log-table-td" style="text-align:center">00：06</td>
+                                            <td class="log-table-td" style="text-align:center">CPU使用率66%</td>
+                                            <td class="log-table-td" style="text-align:center">温度56℃</td>
+                                            <td class="log-table-td" style="text-align:center">内存使用率60%</td>
+                                            <td class="log-table-td" style="text-align:center">设备正常</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="log-table-td" style="text-align:center;height:25px;">2016年8月20日</td>
+                                            <td class="log-table-td" style="text-align:center">00：06</td>
+                                            <td class="log-table-td" style="text-align:center">CPU使用率66%</td>
+                                            <td class="log-table-td" style="text-align:center">温度56℃</td>
+                                            <td class="log-table-td" style="text-align:center">内存使用率60%</td>
+                                            <td class="log-table-td" style="text-align:center">设备正常</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="log-table-td" style="text-align:center;height:25px;">2016年8月20日</td>
+                                            <td class="log-table-td" style="text-align:center">00：06</td>
+                                            <td class="log-table-td" style="text-align:center">CPU使用率66%</td>
+                                            <td class="log-table-td" style="text-align:center">温度56℃</td>
+                                            <td class="log-table-td" style="text-align:center">内存使用率60%</td>
+                                            <td class="log-table-td" style="text-align:center">设备正常</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--左边栏  左边栏必须要放在main的下面-->
+        <div class="aside ">
+            <!--用户信息-->
+            <div class="u-i-f clearfix ">
+                <div class="ui-l ">
+                    <!--头像-->
+                    <div class="head-portrait "></div>
+                </div>
+                <div class="ui-r ">
+                    <ul class="introduce ">
+                        <li>姓名 ：
+                            <sapn>张三</sapn>
+                        </li>
+                        <li>职务 ：
+                            <sapn>设备运维</sapn>
+                        </li>
+                        <li>温岭市公安局</li>
+                    </ul>
+                </div>
+            </div>
+            <!--导航-->
+            <ul class="navigation ">
+              <li><a href="cockpit.html">驾驶舱管理</a></li>
+              <li><a href="network.html">网络拓扑</a></li>
+              <li><a href="系统状态/监控/实时状态.html">系统状态</a></li>
+              <li><a href="#"  class="active">检索分析</a></li>
+              <li><a href="运维管理/运维总览.html">运维管理</a></li>
+              <li><a href="系统管理/设备管理.html">系统管理</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="footer">Copyright © 2016 杭州以数科技有限公司</div>
+    <script src="../js/jquery-1.8.3.min.js "></script>
+    <script src="../js/public.js "></script>
+</body>
+
+</html>

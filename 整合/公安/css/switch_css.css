@@ -1,0 +1,116 @@
+#pic1 {
+    height: 100px;
+    width: 200px;
+    margin-left: 50px;
+    float: left;
+}
+
+#righttoptext {
+    float: right;
+    margin-right: 50px;
+    margin-top: 40px;
+}
+
+.righttext {
+    margin-top: 5px;
+}
+
+.lefttext {
+    width: 200px;
+    margin-top: 5px;
+}
+
+#leftbottomtext {
+    float: left;
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+#rightbottomtext {
+    float: right;
+    margin-right: 145px;
+    margin-top: 5px;
+}
+
+.smalltitle {
+    margin-left: 50px;
+}
+
+.warning-table {
+    width: 100%;
+}
+
+#warning-table {
+    width: 100%;
+}
+
+.firsttd {
+    text-align: right;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 150px;
+}
+
+.secondtd {
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 150px;
+}
+
+.thirdtd {
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 5px;
+    width: 150px;
+}
+
+.keywordtag {
+    width: 100%;
+    height: 30px;
+}
+
+#keyword {
+    float: left;
+    margin-left: 100px;
+}
+
+.keywordtags {
+    float: left;
+    margin-left: 50px;
+    color: white;
+    border-bottom: thick;
+    text-decoration: underline;
+}
+
+#infor_top {
+    width: 100%;
+}
+
+#infor_bottom {
+    width: 100%;
+}
+
+.segmentedbuttons {
+    float: left;
+    display: block;
+    text-align: center;
+    /*margin-left: 10%;*/
+}
+
+.segbtn {
+    float: left;
+    width: 30px;
+    height: 22px;
+    font-size: 12px;
+    /*text-align: center;*/
+    box-sizing: border-box;
+    border: 1px solid rgb(46, 65, 85);
+    cursor: pointer;
+}
+
+.diagram_title {
+    float: left;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

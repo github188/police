@@ -1,0 +1,175 @@
+#smalltitle {
+    font-size: 12px;
+    margin-left: 40px;
+}
+
+.segmentedbuttons {
+    float: left;
+    display: block;
+    text-align: center;
+}
+
+.segbtn {
+    float: left;
+    width: 80px;
+    height: 22px;
+    font-size: 12px;
+    /*text-align: center;*/
+    box-sizing: border-box;
+    border: 1px solid rgb(46, 65, 85);
+    cursor: pointer;
+}
+
+
+/*按钮变色，TODO*/
+
+.segbtn::hover {
+    /*background-color: rgb(43, 64, 88)；*/
+    background-color: red;
+}
+
+.searchbar_rounded {
+    float: right;
+    height: 30px;
+}
+
+#searchleft {
+    float: right;
+    margin-right: 70px;
+    width: 200px;
+    height: 22px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.search-keyword {
+    background-color: red;
+}
+
+#smalltitle-right {
+    font-size: 12px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+#toptop-box {
+    margin-top: 30px;
+    height: 30px;
+}
+
+#top-box {
+    margin-top: 5px;
+    height: 400px;
+}
+
+#bottom-box {
+    margin-top: 20px;
+    height: 100%;
+}
+
+#firstpartleft {
+    margin-left: 15px;
+}
+
+#firstpartright {
+    text-align: center;
+    border: box-sizing;
+    background-color: red;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.leftpart {
+    margin-top: 20px;
+    float: left;
+    margin-left: 0px;
+    width: 80px;
+    text-align: center;
+}
+
+.middlepart {
+    margin-top: 10px;
+    float: left;
+    margin-left: 6px;
+    width: 80px;
+    text-align: center;
+}
+
+.rightpart {
+    margin-top: 20px;
+    float: left;
+    margin-left: 0px;
+    width: 80px;
+    text-align: center;
+}
+
+lasttwoleftpart {
+    float: left;
+    margin-top: 20px;
+    margin-left: 0px;
+    width: 80px;
+    text-align: center;
+}
+
+lasttworightpart {
+    float: left;
+    margin-left: 0px;
+    width: 80px;
+    text-align: center;
+}
+
+#lastleftpart {
+    margin-top: 40px;
+    float: left;
+    margin-left: 0px;
+    width: 80px;
+    text-align: center;
+}
+
+#lastrightpart {
+    margin-top: 40px;
+    float: right;
+    margin-right: 20px;
+    width: 80px;
+    text-align: center;
+}
+
+.box1 {
+    height: 20px;
+    width: 100px;
+}
+
+.searchbox {
+    width: 400px;
+    height: 26px;
+    margin: 0 auto;
+}
+
+#serachinput {
+    float: left;
+    margin-left: 30px;
+    background-color: rgb(19, 30, 44);
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 160px;
+    /*border-bottom-left-radius: 5 px;*/
+}
+
+#searchright {
+    box-sizing: content-box;
+    float: left;
+    width: 60px;
+    height: 22px;
+    text-align: center;
+    border-right: 2px solid;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: rgb(41, 55, 74);
+    /*background-color: red;*/
+}

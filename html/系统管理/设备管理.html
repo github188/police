@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>设备管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/public.css">
+    <link rel="stylesheet" href="../../css/public-nav.css">
+    <link rel="stylesheet" href="../../css/运维管理/main.css">
+    <style>
+        .ct-wrap{
+            min-height: 720px;
+        }
+        .ct-wrap .container{
+            padding: 0;
+        }
+        .main .Modular{
+            background: #132233;
+        }
+        /*one*/
+        .main .wr{
+            width: 97%;
+            background: #18293c;
+            border-radius: 4px;
+            height: 500px;
+        }
+        .main .one-right .wr{
+            width: 100%;
+        }
+        .main .one{
+            margin-top: 16px;
+        }
+        .main .one-left,.main .one-right,.main .one-between{
+            float: left;
+            box-sizing: border-box;
+            background: #132233;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .main .one-right{
+            margin-right: 0;
+            position: relative;
+        }
+        /*two，three，four*/
+        .main .two-all,.main .three-all,.main .four-all{
+            padding-bottom: 20px;
+            background: #18293c;
+            position: relative;
+            margin-bottom: 16px;
+            border-radius: 4px;
+        }
+        /*表格*/
+        .ga-table{
+            margin-bottom: 100px;
+            margin-top: 25px;
+        }
+        .ga-table table{
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+        }
+        .ga-table thead{
+            font-size: 14px;
+            color: #fff;
+            background: #152537;
+        }
+        .ga-table tbody{
+            font-size: 14px;
+            color: #fff;
+        }
+        .ga-table tbody tr:nth-child(n){
+            background: #18293c;
+        }
+        .ga-table tbody tr:nth-child(2n){
+            background: #152537;
+        }
+        .ga-table tr{
+            height: 30px;
+            text-align: center;
+        }
+        .ga-table td{
+            border: 1px solid #35485d;
+            text-align: center;
+            word-break:keep-all;
+            white-space:nowrap;
+        }
+        .ga-table tbody tr:hover,.ga-table thead tr:hover{
+            background: #2c4059;
+        }
+        .ga-table .add-img img{
+            float: left;
+            margin-left: 30%;
+            width: 100px;
+            height: 40px;
+        }
+        .ga-table .fileUp{
+            height: 30px;
+            float: right;
+            background: #18293c;
+            box-shadow:inset 1px 1px 3px #a1a1a1;
+            border: none;
+            border-radius: 4px;
+            margin-right: 5%;
+        }
+        /*one-between，one-right表格*/
+        .one-between .ga-table table,.one-right .ga-table table{
+            width: 60%;
+            margin: auto;
+        }
+        .main .one-between .handle,.main .one-right .handle{
+            width: 100%;
+            position: absolute;
+            left: 20%;
+            top: 85%;
+        }
+        /*two*/
+        .main .two .ga-table tbody tr:not(:last-child){
+            height: 80px;
+        }
+        .main .two .handle{
+            width: 100%;
+            position: absolute;
+            left: 10%;
+            top: 85%;
+        }
+        .main .ga-search{
+            margin-top: 20px;
+            margin-left: 75%;
+            width: 15%;
+            height: 24px;
+        }
+        .main .ga-search input{
+            width: 80%;
+            height: 100%;
+            line-height: 24px;
+            color:#fff;
+            background: #18293c;
+            border: 1px solid #35485d;
+            border-radius: 24px 0 0 24px;
+            padding-left: 10px;
+        }
+        .main .ga-search div{
+            float: right;
+            width:20%;
+            height: 100%;
+            line-height: 24px;
+            background: #35485d;
+            text-align: center;
+            border-radius:0 24px 24px 0;
+            cursor: pointer;
+        }
+        /*three,four表格*/
+        .main .three .ga-table,.main .four .ga-table{
+            margin-bottom: 40px;
+        }
+        .main .three .ga-table span ,.main .four .ga-table span {
+            border-bottom: 1px solid #fff;
+        }
+        /*handle*/
+        .main .handle{
+            width: 100%;
+            position: absolute;
+            left: 10%;
+            top: 85%;
+        }
+        .main .handle button{
+            background: #18293c;
+            border: 1px solid #35485d;
+            border-radius: 3px;
+        }
+        .main .handle .left-button{
+            height: 26px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="content clearfix">
+    <div class="main">
+        <!--右边内容区域是wrap-->
+        <div class="wrap">
+            <div class="wrap-header clearfix">
+                <div class="w-title">温岭市公安局天网工程运维平台</div>
+                <div class="w-ui">欢迎您，<span style="color:#265f89">张三</span>  丨  <span>退出</span></div>
+            </div>
+            <!--一级导航-->
+            <ul class="wrap-nav clearfix">
+                <li><a href="#" class="active">设备管理</a></li>
+                <li><a href="用户管理.html">用户管理</a></li>
+                <li><a href="日报管理.html">日报管理</a></li>
+            </ul>
+            <!--二级导航-->
+            <div class="ct-wrap">
+                <div class="ct clearfix container">
+                    <div class="Modular one clearfix container">
+                        <div class="one-left col-lg-4 col-sm-12">
+                            <div class="wr">
+                                <div class="public-title top-title">
+                                    项目管理
+                                </div>
+                                <div class="ga-table">
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <td>序号</td>
+                                            <td>项目名称</td>
+                                            <td>承建商</td>
+                                            <td>操作</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2014期</td>
+                                            <td>广电</td>
+                                            <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>2015期</td>
+                                            <td>移动</td>
+                                            <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>2016期</td>
+                                            <td>电信</td>
+                                            <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="to-add" colspan="4"><i class="add-tr iconfont">&#xe602</i></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="handle clearfix">
+                                    <button class="left-button export  col-lg-2 col-md-4 col-sm-6 col-xs-12">数据导出</button>
+                                    <button class="left-button print  col-lg-2 col-md-4 col-sm-6 col-xs-12">数据备份</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="one-between col-lg-4 col-sm-12">
+                            <div class="wr">
+                                <div class="public-title top-title">
+                                    所属公司
+                                </div>
+                                <div class="ga-table">
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <td>序号</td>
+                                            <td>所属公司</td>
+                                            <td>操作</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>海康公司</td>
+                                            <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>大华公司</td>
+                                            <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td  colspan="3"><i class="add-tr iconfont">&#xe602</i></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="handle clearfix">
+                                    <button class="left-button export  col-lg-2 col-md-4 col-sm-6 col-xs-12">数据导出</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="one-right col-lg-4 col-sm-12">
+                            <div class="wr">
+                                <div class="public-title top-title">
+                                    设备类型
+                                </div>
+                                <div class="ga-table">
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <td>序号</td>
+                                            <td>设备类型</td>
+                                            <td>操作</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>监控</td>
+                                            <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>检测器</td>
+                                            <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>交换机</td>
+                                            <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>服务器</td>
+                                            <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>网闸</td>
+                                            <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>防火墙</td>
+                                            <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td  colspan="3"><i class="add-tr iconfont">&#xe602</i></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="handle container clearfix">
+                                    <button class="left-button export col-lg-2 col-md-4 col-sm-6 col-xs-12">数据导入</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Modular two clearfix container">
+                        <div class="two-all">
+                            <div class="public-title top-title">
+                                设备信息
+                            </div>
+                            <div class="ga-search">
+                                <input type="text" class="search-text" placeholder="请输入关键字" />
+                                <div class="for-search">搜索</div>
+                            </div>
+                            <div class="ga-table">
+                                <table class="search-table">
+                                    <thead>
+                                    <tr>
+                                        <td>序号</td>
+                                        <td>设备名称</td>
+                                        <td>品牌</td>
+                                        <td>型号/设备号</td>
+                                        <td>图片上传</td>
+                                        <td>操作</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>核心交换001</td>
+                                        <td>思科</td>
+                                        <td>C2912MF-XL</td>
+                                        <td class="add-img notchange">
+                                            <img src="../../img/addimg-1.jpg" alt="" id="upfile1">
+                                            <input class="fileUp" type="button" value="替换图片" onclick="path1.click()">
+                                            <input type="file" id="path1" style="display:none" onchange="upfile1.value=this.value">
+                                        </td>
+                                        <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>汇聚交换001</td>
+                                        <td>华为</td>
+                                        <td>UFS-1024F 24*100/10M</td>
+                                        <td class="add-img notchange">
+                                            <img src="../../img/addimg-2.jpg" alt="" id="upfile2">
+                                            <input class="fileUp" type="button" value="替换图片" onclick="path2.click()">
+                                            <input type="file" id="path2" style="display:none">
+                                        </td>
+                                        <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>接入交换001</td>
+                                        <td>戴尔</td>
+                                        <td>WS-C6500-E/1qaz2wsx</td>
+                                        <td class="add-img notchange">
+                                            <img src="../../img/addimg-3.jpg" alt="" id="upfile3">
+                                            <input class="fileUp" type="button" value="替换图片" onclick="path3.click()">
+                                            <input type="file" id="path3" style="display:none" onchange="upfile3.value=this.value">
+                                        </td>
+                                        <td class="notchange"><i class="remove-tr iconfont">&#xe603</i></td>
+                                    </tr>
+                                    <tr>
+                                        <td  colspan="6"><i class="add-tr iconfont">&#xe602</i></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="handle clearfix">
+                                <button class="left-button export  col-lg-1 col-md-2 col-sm-3 col-xs-6">数据导出</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Modular three clearfix container">
+                        <div class="three-all">
+                            <div class="public-title top-title">
+                                操作记录信息
+                            </div>
+                            <div class="ga-table">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <td>操作时间</td>
+                                        <td>所属项目</td>
+                                        <td>操作内容</td>
+                                        <td>操作人员</td>
+                                        <td>操作</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>2016.9.15&nbsp;&nbsp;9:20</td>
+                                        <td>2014期</td>
+                                        <td>接入交换001变更为接入交换002</td>
+                                        <td>李小明</td>
+                                        <td><button>取消操作</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2016.9.1&nbsp;&nbsp;9:30</td>
+                                        <td>2014期</td>
+                                        <td>交换机增加 <span>交换机.excel</span></td>
+                                        <td>王中仁</td>
+                                        <td><button>取消操作</button></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Modular four clearfix container">
+                        <div class="four-all">
+                            <div class="public-title top-title">
+                                备份恢复
+                            </div>
+                            <div class="ga-table">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <td>备份时间</td>
+                                        <td>所属项目</td>
+                                        <td>备份说明</td>
+                                        <td>操作人员</td>
+                                        <td>操作</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>2016.9.15&nbsp;&nbsp;9:20</td>
+                                        <td>2014期</td>
+                                        <td>接入交换001变更为接入交换002</td>
+                                        <td>李小明</td>
+                                        <td><button>数据恢复</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2016.9.1&nbsp;&nbsp;9:30</td>
+                                        <td>2014期</td>
+                                        <td>交换机增加 <span>交换机.excel</span></td>
+                                        <td>王中仁</td>
+                                        <td><button>数据恢复</button></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左边栏  左边栏必须要放在main的下面-->
+    <div class="aside">
+        <!--用户信息-->
+        <div class="u-i-f clearfix">
+            <div class="ui-l">
+                <!--头像-->
+                <div class="head-portrait"></div>
+            </div>
+            <div class="ui-r">
+                <ul class="introduce">
+                    <li>姓名 ： <span>张三</span></li>
+                    <li>职务 ： <span>设备运维</span></li>
+                    <li>温岭市公安局</li>
+                </ul>
+            </div>
+        </div>
+        <!--导航-->
+        <ul class="navigation">
+            <li><a href="#">驾驶舱管理</a></li>
+            <li><a href="#">网络拓扑</a></li>
+            <li><a href="#">系统状态</a></li>
+            <li><a href="#">检索分析</a></li>
+            <li><a href="../运维管理/运维总览.html">运维管理</a></li>
+            <li><a href="#" class="active">系统管理</a></li>
+        </ul>
+    </div>
+</div>
+<div id="footer">Copyright © 2016 杭州以数科技有限公司</div>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script src="../../js/echarts.js"></script>
+<script src="../../js/public.js"></script>
+<script src="../../js/系统管理/设备管理.js"></script>
+<script src="../../js/nav-toggle.js"></script>
+<script src="../../js/系统管理/设备管理搜索.js"></script>
+<script>
+    document.getElementById('path1').onchange=function(){
+        $('#upfile1').attr('src','../../img/addimg-1-1.jpg');
+    }
+    document.getElementById('path2').onchange=function(){
+       $('#upfile2').attr('src','../../img/addimg-2-1.jpg');
+    }
+    document.getElementById('path3').onchange=function(){
+        $('#upfile3').attr('src','../../img/addimg-3-1.jpg');
+    }
+</script>
+</body>
+</html>

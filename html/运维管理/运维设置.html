@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>运维设置</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/public.css">
+    <link rel="stylesheet" href="../../css/public-nav.css">
+    <link rel="stylesheet" href="../../css/运维管理/main.css">
+    <style>
+        .ct-wrap{
+            min-height: 721px;
+        }
+        .main .sub-nav{
+            margin-top:20px;
+            margin-bottom:20px;
+            margin-left: 20px;
+        }
+        .main .sub-nav li{
+            width: 160px;
+        }
+        /*one*/
+        .main .one{
+            margin-bottom: 10px;
+        }
+        .main .con-setting{
+            margin-top: 20px;
+            padding-left: 20%;
+        }
+        .main .con-column-left{
+            float: left;
+            margin-right: 10%;
+        }
+        .main .con-column-right{
+            float: left;
+            width: 15%;
+        }
+
+        .main .con-column-right:not(:last-child){
+            margin-right: 10%;
+        }
+        .con-column-right > div{
+            margin-bottom: 15px;
+        }
+        .con-column-left{
+            margin-right: 10%;
+        }
+        .main .con-left{
+            width: 70px;
+            text-align: right;
+            height: 24px;
+            line-height: 24px;
+            margin-bottom: 15px;
+        }
+        .con-setting .far{
+            margin-top: 60px;
+        }
+        .main .con-row-down{
+            box-sizing: content-box;
+            width: 100%;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border: 1px solid #35485d;
+            border-radius: 2px;
+            background: #152537;
+            position: relative;
+            cursor: pointer;
+        }
+        .main .con-row-down-sling{
+            position: absolute;
+            bottom: -6px;
+            right: -6px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-top: 6px solid #fff;
+            -webkit-transform:rotate(-45deg);
+        }
+        .main .con-dowm{
+            box-sizing: content-box;
+            position: absolute;
+            left:-1px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #35485d;
+            border-radius: 2px;
+            background: #152537;
+            display: none;
+            z-index: 100;
+            cursor: pointer;
+        }
+        .main .con-dowm-col{
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .main .con-dowm-col:hover{
+            background: #2b4058;
+        }
+        /*three*/
+        .main .three .con-column-left{
+            margin-right: 5%;
+        }
+        .main .three .con-column-left > div{
+            margin-bottom: 17px;
+        }
+        .main .three .con-column-right{
+            margin-right: 1%;
+        }
+        /*.main .three .con-column-right-small,.main .three .con-column-right-normal{*/
+            /*margin-top: -4px;*/
+        /*}*/
+        .main .three .con-column-right-small{
+            width: 3%;
+        }
+        .main .three .con-column-right-normal{
+            width: 10%;
+        }
+        .main .three .sub-nav{
+            margin-left: 15%;
+        }
+        .main .three .sub-nav li{
+            width: 100px;
+        }
+        /*four*/
+        .main .four .con-column-right-word{
+            text-align: center;
+        }
+        .main .del{
+            float: left;
+            margin-left: 3%;
+            margin-top: 35px;
+        }
+        .main .del div{
+            margin-bottom: 24px;
+        }
+        .iconfont{
+            cursor: pointer;
+            color: #35485d;
+        }
+        /*add*/
+        .main .add{
+            float: none;
+            width: 11%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="content clearfix">
+    <div class="main">
+        <!--右边内容区域是wrap-->
+        <div class="wrap">
+            <div class="wrap-header clearfix">
+                <div class="w-title">温岭市公安局天网工程运维平台</div>
+                <div class="w-ui">欢迎您，<span style="color:#265f89">张三</span>  丨  <span>退出</span></div>
+            </div>
+            <!--一级导航-->
+            <ul class="wrap-nav clearfix">
+                <li><a href="运维总览.html">运维总览</a></li>
+                <li><a href="故障报修.html">故障报修</a></li>
+                <li><a href="故障接收.html">故障接收</a></li>
+                <li><a href="计费统计.html">计费统计</a></li>
+                <li><a href="#" class="active">运维设置</a></li>
+            </ul>
+            <!--二级导航-->
+            <ul class="sub-nav clearfix">
+                <li class="active"><a>2014期</a></li>
+                <li><a>2015期</a></li>
+                <li><a>2016期</a></li>
+            </ul>
+            <div class="ct-wrap">
+                <div class="ct clearfix">
+                    <div class="Modular one container">
+                        <div class="public-title top-title">
+                            维护人员设置
+                        </div>
+                        <div class="con-setting">
+                            <div class="con-column-left clearfix">
+                                <div class="con-left">故障相应</div>
+                            </div>
+                            <div class="con-column-right clearfix">
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">小张</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">小张</div>
+                                        <div class="con-dowm-col">小王</div>
+                                        <div class="con-dowm-col">小李</div>
+                                        <div class="con-dowm-col">小孙</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Modular two clearfix container">
+                        <div class="public-title top-title">
+                            计费规则设置
+                        </div>
+                        <div class="con-setting clearfix">
+                            <div class="con-column-left clearfix">
+                                <div class="con-left">故障相应</div>
+                                <div class="con-left">时间</div>
+                                <div class="con-left far">修复时限</div>
+                                <div class="con-left">监控</div>
+                                <div class="con-left">检测器</div>
+                                <div class="con-left">服务器</div>
+                                <div class="con-left">应用服务器</div>
+                                <div class="con-left">网络线路</div>
+                            </div>
+                            <div class="con-column-right clearfix">
+                                <div class="con-column-right-word">时限标准</div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">4小时</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">4小时</div>
+                                        <div class="con-dowm-col">6小时</div>
+                                        <div class="con-dowm-col">8小时</div>
+                                        <div class="con-dowm-col">10小时</div>
+                                    </div>
+                                </div>
+                                <div class="con-column-right-word far">时限标准</div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">1天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">1天</div>
+                                        <div class="con-dowm-col">2天</div>
+                                        <div class="con-dowm-col">3天</div>
+                                        <div class="con-dowm-col">4天</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">1天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">1天</div>
+                                        <div class="con-dowm-col">2天</div>
+                                        <div class="con-dowm-col">3天</div>
+                                        <div class="con-dowm-col">4天</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">1天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">1天</div>
+                                        <div class="con-dowm-col">2天</div>
+                                        <div class="con-dowm-col">3天</div>
+                                        <div class="con-dowm-col">4天</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">1天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">1天</div>
+                                        <div class="con-dowm-col">2天</div>
+                                        <div class="con-dowm-col">3天</div>
+                                        <div class="con-dowm-col">4天</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">1天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">1天</div>
+                                        <div class="con-dowm-col">2天</div>
+                                        <div class="con-dowm-col">3天</div>
+                                        <div class="con-dowm-col">4天</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right clearfix">
+                                <div class="con-column-right-word">计费标准</div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">200元/天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">200元/天</div>
+                                        <div class="con-dowm-col">300元/天</div>
+                                        <div class="con-dowm-col">400元/天</div>
+                                        <div class="con-dowm-col">500元/天</div>
+                                    </div>
+                                </div>
+                                <div class="con-column-right-word far">计费标准</div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">200元/天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">200元/天</div>
+                                        <div class="con-dowm-col">300元/天</div>
+                                        <div class="con-dowm-col">400元/天</div>
+                                        <div class="con-dowm-col">500元/天</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">200元/天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">200元/天</div>
+                                        <div class="con-dowm-col">300元/天</div>
+                                        <div class="con-dowm-col">400元/天</div>
+                                        <div class="con-dowm-col">500元/天</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">200元/天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">200元/天</div>
+                                        <div class="con-dowm-col">300元/天</div>
+                                        <div class="con-dowm-col">400元/天</div>
+                                        <div class="con-dowm-col">500元/天</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">200元/天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">200元/天</div>
+                                        <div class="con-dowm-col">300元/天</div>
+                                        <div class="con-dowm-col">400元/天</div>
+                                        <div class="con-dowm-col">500元/天</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">200元/天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">200元/天</div>
+                                        <div class="con-dowm-col">300元/天</div>
+                                        <div class="con-dowm-col">400元/天</div>
+                                        <div class="con-dowm-col">500元/天</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Modular three clearfix container">
+                        <div class="public-title top-title">
+                            预警报修设置
+                        </div>
+                        <ul class="sub-nav clearfix">
+                            <li><a>监控</a></li>
+                            <li class="active"><a>检测器</a></li>
+                            <li><a>服务器</a></li>
+                            <li><a>应用服务器</a></li>
+                            <li><a>网络设备</a></li>
+                        </ul>
+                        <div class="con-setting">
+                            <div class="con-column-right con-column-right-normal clearfix">
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">温度</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">温度</div>
+                                        <div class="con-dowm-col">存储</div>
+                                        <div class="con-dowm-col">CPU</div>
+                                        <div class="con-dowm-col">内存</div>
+                                        <div class="con-dowm-col">丢包</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">存储</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">温度</div>
+                                        <div class="con-dowm-col">存储</div>
+                                        <div class="con-dowm-col">CPU</div>
+                                        <div class="con-dowm-col">内存</div>
+                                        <div class="con-dowm-col">丢包</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">CPU</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">温度</div>
+                                        <div class="con-dowm-col">存储</div>
+                                        <div class="con-dowm-col">CPU</div>
+                                        <div class="con-dowm-col">内存</div>
+                                        <div class="con-dowm-col">丢包</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">内存</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">温度</div>
+                                        <div class="con-dowm-col">存储</div>
+                                        <div class="con-dowm-col">CPU</div>
+                                        <div class="con-dowm-col">内存</div>
+                                        <div class="con-dowm-col">丢包</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">丢包</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">温度</div>
+                                        <div class="con-dowm-col">存储</div>
+                                        <div class="con-dowm-col">CPU</div>
+                                        <div class="con-dowm-col">内存</div>
+                                        <div class="con-dowm-col">丢包</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right con-column-right-small clearfix">
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right con-column-right-normal clearfix">
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">75 &#8451;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">75 &#8451;</div>
+                                        <div class="con-dowm-col">80 &#8451;</div>
+                                        <div class="con-dowm-col">90 &#8451;</div>
+                                        <div class="con-dowm-col">95 &#8451;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">70 &#37;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">70 &#37;</div>
+                                        <div class="con-dowm-col">80 &#37;</div>
+                                        <div class="con-dowm-col">90 &#37;</div>
+                                        <div class="con-dowm-col">95 &#37;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">70 &#37;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">70 &#37;</div>
+                                        <div class="con-dowm-col">80 &#37;</div>
+                                        <div class="con-dowm-col">90 &#37;</div>
+                                        <div class="con-dowm-col">95 &#37;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">70 &#37;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">70 &#37;</div>
+                                        <div class="con-dowm-col">80 &#37;</div>
+                                        <div class="con-dowm-col">90 &#37;</div>
+                                        <div class="con-dowm-col">95 &#37;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">2 &#37;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">2 &#37;</div>
+                                        <div class="con-dowm-col">4 &#37;</div>
+                                        <div class="con-dowm-col">6 &#37;</div>
+                                        <div class="con-dowm-col">8 &#37;</div>
+                                        <div class="con-dowm-col">10 &#37;</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right con-column-right-small clearfix">
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&#38;&#38;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&#38;&#38;</div>
+                                        <div class="con-dowm-col">&#124;&#124;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&#38;&#38;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&#38;&#38;</div>
+                                        <div class="con-dowm-col">&#124;&#124;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&#38;&#38;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&#38;&#38;</div>
+                                        <div class="con-dowm-col">&#124;&#124;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&#38;&#38;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&#38;&#38;</div>
+                                        <div class="con-dowm-col">&#124;&#124;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&#38;&#38;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&#38;&#38;</div>
+                                        <div class="con-dowm-col">&#124;&#124;</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right con-column-right-normal clearfix">
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">次数</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">次数</div>
+                                        <div class="con-dowm-col">时间</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">次数</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">次数</div>
+                                        <div class="con-dowm-col">时间</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">次数</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">次数</div>
+                                        <div class="con-dowm-col">时间</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">次数</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">次数</div>
+                                        <div class="con-dowm-col">时间</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">时间</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">时间</div>
+                                        <div class="con-dowm-col">次数</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right con-column-right-small clearfix">
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right con-column-right-normal clearfix">
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">20</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">20</div>
+                                        <div class="con-dowm-col">40</div>
+                                        <div class="con-dowm-col">60</div>
+                                        <div class="con-dowm-col">80</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">20</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">20</div>
+                                        <div class="con-dowm-col">40</div>
+                                        <div class="con-dowm-col">60</div>
+                                        <div class="con-dowm-col">80</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">20</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">20</div>
+                                        <div class="con-dowm-col">40</div>
+                                        <div class="con-dowm-col">60</div>
+                                        <div class="con-dowm-col">80</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">20</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">20</div>
+                                        <div class="con-dowm-col">40</div>
+                                        <div class="con-dowm-col">60</div>
+                                        <div class="con-dowm-col">80</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">10min</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">10min</div>
+                                        <div class="con-dowm-col">20min</div>
+                                        <div class="con-dowm-col">30min</div>
+                                        <div class="con-dowm-col">60min</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Modular three four clearfix container">
+                        <div class="public-title top-title">
+                            告警通知设置
+                        </div>
+                        <div class="con-setting clearfix">
+                            <div class="con-column-right con-column-right-normal clearfix">
+                                <div class="con-column-right-word">告警条件</div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">故障指数</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">故障指数</div>
+                                        <div class="con-dowm-col">时间</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">故障数量</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">故障指数</div>
+                                        <div class="con-dowm-col">时间</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">监控故障</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">故障指数</div>
+                                        <div class="con-dowm-col">时间</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right con-column-right-small clearfix">
+                                <div class="con-column-right-word">&nbsp;</div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">&ge;</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">&ge;</div>
+                                        <div class="con-dowm-col">&lt;</div>
+                                        <div class="con-dowm-col">&gt;</div>
+                                        <div class="con-dowm-col">&le;</div>
+                                        <div class="con-dowm-col">&ne;</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right con-column-right-normal clearfix">
+                                <div class="con-column-right-word">&nbsp;</div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">4</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">4</div>
+                                        <div class="con-dowm-col">6</div>
+                                        <div class="con-dowm-col">8</div>
+                                        <div class="con-dowm-col">10</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">50</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">50</div>
+                                        <div class="con-dowm-col">60</div>
+                                        <div class="con-dowm-col">70</div>
+                                        <div class="con-dowm-col">80</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">30</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">30</div>
+                                        <div class="con-dowm-col">50</div>
+                                        <div class="con-dowm-col">70</div>
+                                        <div class="con-dowm-col">90</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right con-column-right-normal clearfix">
+                                <div class="con-column-right-word">联系人</div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">张大川</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">张大川</div>
+                                        <div class="con-dowm-col">李大川</div>
+                                        <div class="con-dowm-col">王大川</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">李小明</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">李小明</div>
+                                        <div class="con-dowm-col">张小明</div>
+                                        <div class="con-dowm-col">赵小明</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">赵天天</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">赵天天</div>
+                                        <div class="con-dowm-col">孙天天</div>
+                                        <div class="con-dowm-col">周天天</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right con-column-right-normal clearfix">
+                                <div class="con-column-right-word">通知方式</div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">全部</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">全部</div>
+                                        <div class="con-dowm-col">短信</div>
+                                        <div class="con-dowm-col">邮件</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">全部</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">全部</div>
+                                        <div class="con-dowm-col">短信</div>
+                                        <div class="con-dowm-col">邮件</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">全部</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">全部</div>
+                                        <div class="con-dowm-col">短信</div>
+                                        <div class="con-dowm-col">邮件</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="con-column-right con-column-right-normal clearfix">
+                                <div class="con-column-right-word">通知频率</div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">15min/次</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">15min/次</div>
+                                        <div class="con-dowm-col">30min/次</div>
+                                        <div class="con-dowm-col">1h/次</div>
+                                        <div class="con-dowm-col">5h/次</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">15min/次</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">15min/次</div>
+                                        <div class="con-dowm-col">30min/次</div>
+                                        <div class="con-dowm-col">1h/次</div>
+                                        <div class="con-dowm-col">5h/次</div>
+                                    </div>
+                                </div>
+                                <div class="con-row-down">
+                                    <div class="con-row-down-word">15min/次</div>
+                                    <div class="con-row-down-sling"></div>
+                                    <div class="con-dowm">
+                                        <div class="con-dowm-col">15min/次</div>
+                                        <div class="con-dowm-col">30min/次</div>
+                                        <div class="con-dowm-col">1h/次</div>
+                                        <div class="con-dowm-col">5h/次</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="del">
+                                <div class="remove-tr iconfont">&#xe603</div>
+                                <div class="remove-tr iconfont">&#xe603</div>
+                                <div class="remove-tr iconfont">&#xe603</div>
+                            </div>
+                        </div>
+                        <div class="add iconfont">&#xe602</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左边栏  左边栏必须要放在main的下面-->
+    <div class="aside">
+        <!--用户信息-->
+        <div class="u-i-f clearfix">
+            <div class="ui-l">
+                <!--头像-->
+                <div class="head-portrait"></div>
+            </div>
+            <div class="ui-r">
+                <ul class="introduce">
+                    <li>姓名 ： <sapn>张三</sapn></li>
+                    <li>职务 ： <sapn>设备运维</sapn></li>
+                    <li>温岭市公安局</li>
+                </ul>
+            </div>
+        </div>
+        <!--导航-->
+        <ul class="navigation">
+            <li><a href="#">驾驶舱管理</a></li>
+            <li><a href="#">网络拓扑</a></li>
+            <li><a href="#">系统状态</a></li>
+            <li><a href="#">检索分析</a></li>
+            <li><a href="#"  class="active">运维管理</a></li>
+            <li><a href="../系统管理/设备管理.html">系统管理</a></li>
+        </ul>
+    </div>
+</div>
+<div id="footer">Copyright © 2016 杭州以数科技有限公司</div>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script src="../../js/echarts.js"></script>
+<script src="../../js/public.js"></script>
+<script src="../../js/运维管理/运维设置.js"></script>
+<script>
+    var $subNav=$('.sub-nav');
+    $subNav.find('li').click(function(){
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+    })
+</script>
+</body>
+</html>
